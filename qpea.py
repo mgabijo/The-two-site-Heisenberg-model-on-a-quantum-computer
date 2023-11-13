@@ -1,6 +1,6 @@
 import numpy as np
 from qiskit import *
-from key import tok, tok_pg, tok_pessoal
+from key import tok
 from qiskit import IBMQ 
 import pickle
 '''
@@ -15,7 +15,7 @@ The results are saved in pickle files.
 '''
 
 # Save account
-IBMQ.save_account(tok_pg, overwrite=True)
+IBMQ.save_account(tok, overwrite=True)
 
 # Load account
 IBMQ.load_account()
