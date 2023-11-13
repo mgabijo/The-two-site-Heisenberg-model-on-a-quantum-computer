@@ -1,5 +1,5 @@
 <picture>
-    <img src=".media/logo.png">
+    <img src=".media/logo.png" width="200">
 </picture>
   
 # The two-site Heisenberg model studied using a quantum computer: A pedagogical introduction
