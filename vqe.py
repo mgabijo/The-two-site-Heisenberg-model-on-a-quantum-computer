@@ -8,7 +8,7 @@ from qiskit import IBMQ #2
 from qiskit.providers.aer.noise import NoiseModel
 
 # Save account
-IBMQ.save_account(tok, overwrite=True)
+#IBMQ.save_account(tok, overwrite=True)
 
 # Load account
 IBMQ.load_account()
@@ -113,16 +113,17 @@ optimizer = COBYLA(maxiter=150, tol=0.1)
 params = np.random.rand(3*dimension)
 
 # Run the optimization
-ret = optimizer.minimize(fun=objective_function, x0=params)
-
+#ret = optimizer.minimize(fun=objective_function, x0=params)
+ret = optimizer.optimize(num_vars=3*dimension, objective_function=objective_function, initial_point=params)
 # Save the results
 save = {}
-save['params'] = ret.x
-save['Energy_found'] = ret.fun
+save = {}
+save['params'] = ret[0]
+save['Energy_found'] = ret[1]
 save['Energy_values'] = energy_values
 
 # save the results with pickle
 with open('vqe_noise_test.pkl', 'wb') as f:
     pickle.dump(save, f)
 
-print("Energy found:", ret.fun)
+print("Energy found:", ret[1])
