@@ -7,6 +7,16 @@ from key import tok
 from qiskit import IBMQ #2
 from qiskit.providers.aer.noise import NoiseModel
 
+'''
+Author: Maria Gabriela Jordão Oliveira
+
+The goal of this script is to implement the Variational Quantum Eigensolver (VQE) for
+the two-site Heisenberg model. The Hamiltonian is given by:
+H = J (S1x S2x + S1y S2y + S1z S2z)
+where J is the coupling constant and S1 and S2 are the spin operators for the two sites.
+
+The results are saved in pickle files.
+'''
 # Save account
 #IBMQ.save_account(tok, overwrite=True)
 
